@@ -31,6 +31,7 @@ private Button ResetButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Replace the file path with the path to your video file
+    	
         file = new File("C:\\Users\\alex3\\Downloads\\production_id_4754030 (2160p).mp4");
         media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
@@ -41,6 +42,23 @@ private Button ResetButton;
         });
         
     }
+    
+    public void playChestPressVideo(URL url, ResourceBundle resourceBundle) {
+        // Replace the file path with the path to your video file
+    	
+        file = new File("C:\\Users\\alex3\\Downloads\\pexels-kampus-production-6892972 (2160p).mp4");
+        media = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaView.setMediaPlayer(mediaPlayer);
+
+        mediaPlayer.setOnReady(() -> {
+            mediaPlayer.play();
+        });
+        
+    }
+    
+    
+    
     public void pauseMedia() {
     	if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
             mediaPlayer.pause();

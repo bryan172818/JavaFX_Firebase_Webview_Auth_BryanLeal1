@@ -22,6 +22,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Button fx:id="WorkoutPlans" layoutX="148.0" layoutY="120.0" mnemonicParsing="false" onAction="#onWorkoutPlansButtonClick" onMouseClicked="#onWorkoutPlansButtonClick" text="Workout Plans" />
          </children>
       </AnchorPane>
    </center>

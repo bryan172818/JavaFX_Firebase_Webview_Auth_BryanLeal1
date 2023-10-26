@@ -13,5 +13,11 @@
          </font>
       </Label>
       <Button fx:id="Push_Up" layoutX="43.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#handleOpenPushupTutorial" text="Push Up Tutorial" />
+      <Button layoutX="43.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#handleChestPressTutorial" text="Chest Press Tutorial" />
+      <Button layoutX="43.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#handleDumbBellFlyesTutorial" text="Dumbell Flyes" />
+      <Button layoutX="43.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#handleSquatsTutorial" text="Squats" />
+      <Button layoutX="43.0" layoutY="311.0" mnemonicParsing="false" onMouseClicked="#handleLegPressesTutorial" text="Leg Presses" />
+      <Button layoutX="239.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#handleLungesTutorial" text="Lunges" />
+      <Button layoutX="240.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#ShoulderPressesTutorial" text="Shoulder Presses" />
    </children>
 </AnchorPane>
