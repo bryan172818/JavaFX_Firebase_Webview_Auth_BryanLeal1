@@ -19,6 +19,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginController  {
 
@@ -32,10 +34,81 @@ public class LoginController  {
     private PasswordField passwordField;
     @FXML
     private Button cancelButton;
-
+    //for the signup page
+    @FXML
+    private TextField emailField;  // New email input field
+    @FXML
+    private PasswordField password_Field;
     @FXML
     private Button login_button;
 
+    private List<UserProfile> userProfiles = new ArrayList<>(); // Store user profiles
+
+    // ... other methods ...
+    @FXML
+    protected void onSubmitButtonClick(ActionEvent event) {
+        // Get user input from the form
+        String enteredUsername = usernameField.getText();
+        String enteredPassword = password_Field.getText();
+        String enteredEmail = emailField.getText();  // Get email input
+
+        // Create a UserProfile object with the entered data
+        UserProfile userProfile = new UserProfile(enteredUsername, enteredEmail, enteredPassword);
+
+        // Add the UserProfile object to the list
+        userProfiles.add(userProfile);
+
+        // Display user information
+        System.out.println("User Credentials Stored:");
+        System.out.println("Username: " + userProfile.getUsername());
+        System.out.println("Email: " + userProfile.getEmail());
+        System.out.println("Password: " + userProfile.getPassword());
+
+        // Clear the input fields
+        usernameField.clear();
+        password_Field.clear();
+        emailField.clear();
+
+        // Optionally, you can save the userProfiles list to a file for persistent storage.
+    }
+
+    // Rest of your code...
+
+//    @FXML first attepmt Dont delete yet!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    protected void onSubmitButtonClick(ActionEvent event) {
+//        // Get user input from the form
+//        String enteredUsername = usernameField.getText();
+//        String enteredPassword = password_Field.getText();
+//        // You can also get the emailField value if needed.
+//
+//        // Create a UserProfile object with the entered data
+//        UserProfile userProfile = new UserProfile(enteredUsername, enteredPassword, ""); // Replace "" with the email if needed.
+//
+//        // Add the UserProfile object to the list
+//        userProfiles.add(userProfile);
+////
+////        // Display a message to inform the user that the information has been stored
+////        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+////        alert.setTitle("Information Stored");
+////        alert.setHeaderText(null);
+////        alert.setContentText("Your information has been stored.");
+////        alert.showAndWait();
+//        System.out.println("User Credentials Stored:");
+//        System.out.println("Username: " + userProfile.getUsername());
+//        System.out.println("Password: " + userProfile.getPassword());
+//        
+//        // Clear the input fields
+//        usernameField.clear();
+//        password_Field.clear();
+//        // Clear emailField if needed.
+//
+//        // Optionally, you can save the userProfiles list to a file for persistent storage.
+//
+//       //// event.consume(); // Prevent further handling of the event
+//    }
+//
+//    
+    
     //Not needed
     @FXML
     protected void onHelloButtonClick() {
@@ -80,7 +153,33 @@ public class LoginController  {
         }
     }
 
+    @FXML
+    private Button newUserButton;
 
+    @FXML
+    private void onNewUserButtonClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            //stage.setTitle("New User Registration"); // Set the title for the new window
+            stage.setScene(new Scene(root));
+
+            stage.show();
+
+            // Close the current stage (login page)
+            Stage currentStage = (Stage) newUserButton.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    	
+    	
+    
     
     @FXML
     private Button WorkoutVideos;

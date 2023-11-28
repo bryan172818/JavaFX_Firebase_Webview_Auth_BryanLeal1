@@ -48,6 +48,8 @@
             <PasswordField fx:id="passwordField" layoutX="149.0" layoutY="187.0" promptText="password" />
             <Button fx:id="login_button" layoutX="161.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onLoginButtonClick" prefHeight="26.0" prefWidth="122.0" text="Login" />
             <Button fx:id="cancelButton" layoutX="161.0" layoutY="315.0" mnemonicParsing="false" onMousePressed="#OnClickMecancelbuttonClick" prefHeight="26.0" prefWidth="121.0" text="Cancel" />
+            <Button fx:id="newUserButton" onAction="#onNewUserButtonClick" onMouseClicked="#onNewUserButtonClick" text="New Users" />
+           
          </children></AnchorPane>
    </right>
 </BorderPane>
